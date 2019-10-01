@@ -1,0 +1,55 @@
+.container{
+    background-image: url("blue-abstract.jpg");
+    border: 2px solid black ;
+    height: 860px;
+    border-radius: 15px;
+    
+}
+.heading{
+    height: 55px;
+    width:330px;
+    background-color:lightslategrey;
+    color: white;
+    margin-left: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 5px;
+    border-radius: 6px;
+}
+.content{
+    height: 370px;
+    width: 500px;
+    background-color:white;
+    color: black;
+    margin-left: 10px;
+    margin-bottom: 25px;
+    padding: 10px;
+    border-radius: 10px;
+    
+}
+#number-to-guess{
+    height: 100px;
+    width: 190px;
+    background-color:grey;
+    color: white;
+    margin-bottom: 25px;
+    margin-left: 10px;
+    font-size: 40px;
+    text-align: center;
+    border-radius: 8px;
+    
+}
+.crystal-image{
+    border: 1px solid black;
+    justify-content: space-between;
+    margin: 10px;
+    border-radius: 6px;
+
+}
+.number{
+    
+}
+.crystal{
+    
+    
+}

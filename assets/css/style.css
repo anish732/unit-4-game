@@ -3,6 +3,9 @@
     border: 2px solid black ;
     height: 860px;
     border-radius: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     
 }
 .heading{
@@ -45,11 +48,4 @@
     margin: 10px;
     border-radius: 6px;
 
-}
-.number{
-    
-}
-.crystal{
-    
-    
 }

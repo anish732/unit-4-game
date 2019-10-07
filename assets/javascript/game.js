@@ -15,11 +15,10 @@ $(document).ready(function () {
     for (var i=0; i<images.length; i++){
       var randomValue = Math.floor(Math.random() * 11) +1;
       console.log("initial set up random = " + randomValue);
-     // var myDiv = $("<div class=" + "")
+     
       var imageCrystal = $("<img>");
 
       imageCrystal.addClass("crystal-image");
-      //imageCrystal.attr("id",i).attr("value",crystalValue);
         
       imageCrystal.attr("src", images[i]);
       imageCrystal.attr("id",i).attr("value",randomValue);
@@ -33,45 +32,42 @@ $(document).ready(function () {
       console.log(imageCrystal);
     }
     
+
     $(document).on("click",".crystal-image",function(event){
       var crystalValue = event.target.value
       console.log("crystalValue = " + crystalValue)
          //crystalValue = parseInt(crystalValue);
          
           counter += parseInt(crystalValue)
+
           $("#score").text("score :" + counter);
          //alert("New score " + counter);
       console.log(counter)
       if (counter === randomNumber){
       win++;
-     // counter =0;
-     // randomNumber = Math.floor(Math.random() * 101) + 19;
+     
      
       reset();
     }
     if(counter > randomNumber){
       lost++;
-      //counter =0;
-      //randomNumber = Math.floor(Math.random() * 101) + 19;
+      
       
      reset();
       
       }
-
+    });
       function reset(){
         $(".crystal").empty();
-        console.log("func reset");
+        
         randomNumber = Math.floor(Math.random() * 101) + 19;
           $("#number-to-guess").text(randomNumber);
           console.log("images = " + images.length);
-          for (var i=0; i < images.length; i++){
-                var randomValue = Math.floor(Math.random() * 11) +1;
-                console.log("crystal random num = " + randomValue);
-                var imageCrystal = $("<img>");
-
-                imageCrystal.attr("id",i).attr("value",randomValue);
-                imageCrystal.val(randomValue);
-
+          $("#0").val(Math.floor(Math.random() * 11) +1);
+          $("#1").val(Math.floor(Math.random() * 11) +1);
+           $("#2").val(Math.floor(Math.random() * 11) +1);
+           $("#3").val(Math.floor(Math.random() * 11) +1);
+          counter = 0;
 
               // var myDiv = $("<div class=" + "")
                 //var imageCrystal = $("<img>");                  
@@ -79,13 +75,13 @@ $(document).ready(function () {
                 //$("#crystal").append(imageCrystal);
                 
           }
-        counter =0;
-      }
+        
+      
 
     $("#win").text("wins :" + win);
     $("#loose").text("lost :" + lost);
   
 
-    })
+        })   
   
-  })
+  

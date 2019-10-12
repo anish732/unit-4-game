@@ -1,87 +1,74 @@
 $(document).ready(function () {
 
+  var randomNumber;
 
-    var randomNumber;
+  randomNumber = Math.floor(Math.random() * 101) + 19;
+  $("#number-to-guess").text(randomNumber);
 
-    randomNumber = Math.floor(Math.random() * 101) + 19;
-    
-    
-    $("#number-to-guess").text(randomNumber);
+  var win = 0;
+  var lost = 0;
+  var counter = 0;
+  var images = ["crystals.png", "diamond.png", "superthumb.png", "pendants.jpg"]
+  for (var i = 0; i < images.length; i++) {
+    var randomValue = Math.floor(Math.random() * 11) + 1;
+    console.log("initial set up random = " + randomValue);
 
-    var win = 0;
-    var lost = 0;
-    var counter = 0;
-    var images =["crystals.png", "diamond.png","superthumb.png","pendants.jpg"]
-    for (var i=0; i<images.length; i++){
-      var randomValue = Math.floor(Math.random() * 11) +1;
-      console.log("initial set up random = " + randomValue);
-     
-      var imageCrystal = $("<img>");
+    var imageCrystal = $("<img>");
 
-      imageCrystal.addClass("crystal-image");
-        
-      imageCrystal.attr("src", images[i]);
-      imageCrystal.attr("id",i).attr("value",randomValue);
+    imageCrystal.addClass("crystal-image");
 
-      imageCrystal.val(randomValue);
-      //imageCrystal.attr("data-value", randomValue);
-      
-      //imageCrystal.html(randomValue);
-     
-      $("#crystal").append(imageCrystal);
-      console.log(imageCrystal);
-    }
-    
+    imageCrystal.attr("src", images[i]);
+    imageCrystal.attr("id", i).attr("value", randomValue);
 
-    $(document).on("click",".crystal-image",function(event){
-      var crystalValue = event.target.value
-      console.log("crystalValue = " + crystalValue)
-         //crystalValue = parseInt(crystalValue);
-         
-          counter += parseInt(crystalValue)
+    imageCrystal.val(randomValue);
+    //imageCrystal.attr("data-value", randomValue);
 
-          $("#score").text("score :" + counter);
-         //alert("New score " + counter);
-      console.log(counter)
-      if (counter === randomNumber){
+    //imageCrystal.html(randomValue);
+
+    $("#crystal").append(imageCrystal);
+    console.log(imageCrystal);
+  }
+
+  $(document).on("click", ".crystal-image", function (event) {
+    var crystalValue = event.target.value
+    console.log("crystalValue = " + crystalValue)
+    //crystalValue = parseInt(crystalValue);
+
+    counter += parseInt(crystalValue)
+
+    $("#score").text("score :" + counter);
+    //alert("New score " + counter);
+    console.log(counter)
+    if (counter === randomNumber) {
       win++;
-     
-     
       reset();
     }
-    if(counter > randomNumber){
+    if (counter > randomNumber) {
       lost++;
-      
-      
-     reset();
-      
-      }
-    });
-      function reset(){
-        $(".crystal").empty();
-        
-        randomNumber = Math.floor(Math.random() * 101) + 19;
-          $("#number-to-guess").text(randomNumber);
-          console.log("images = " + images.length);
-          $("#0").val(Math.floor(Math.random() * 11) +1);
-          $("#1").val(Math.floor(Math.random() * 11) +1);
-           $("#2").val(Math.floor(Math.random() * 11) +1);
-           $("#3").val(Math.floor(Math.random() * 11) +1);
-          counter = 0;
+      reset();
+    }
+  });
+  function reset() {
+    $(".crystal").empty();
 
-              // var myDiv = $("<div class=" + "")
-                //var imageCrystal = $("<img>");                  
-                //$("image").(randomValue);              
-                //$("#crystal").append(imageCrystal);
-                
-          }
-        
-      
-
+    randomNumber = Math.floor(Math.random() * 101) + 19;
+    $("#number-to-guess").text(randomNumber);
+    console.log("images = " + images.length);
+    $("#0").val(Math.floor(Math.random() * 11) + 1);
+    $("#1").val(Math.floor(Math.random() * 11) + 1);
+    $("#2").val(Math.floor(Math.random() * 11) + 1);
+    $("#3").val(Math.floor(Math.random() * 11) + 1);
+    counter = 0;
     $("#win").text("wins :" + win);
     $("#loose").text("lost :" + lost);
   
 
-        })   
-  
-  
+
+  }
+  $("#win").text("wins :" + win);
+  $("#loose").text("lost :" + lost);
+
+
+})
+
+

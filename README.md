@@ -4,9 +4,10 @@
 
 ### Technologies used:
 
-* HTML
-* CSS (bootstrap)
-* JavaScript
+- HTML
+- CSS (bootstrap)
+- JavaScript
+- JQuery
 
 ### Screenshot:
 
@@ -14,9 +15,11 @@
 
 ### Code:
 
-Used Mathfloor(Math.random()) function to get  random number and random value for crystls
+Used Mathfloor(Math.random()) function to get random number and random value for crystls
 
+```
  randomNumber = Math.floor(Math.random() * 101) + 19;
 
  var randomValue = Math.floor(Math.random() * 11) + 1;
 
+```

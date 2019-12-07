@@ -1,5 +1,4 @@
-$(document).ready(function () {
-
+$(document).ready(function() {
   var randomNumber;
 
   randomNumber = Math.floor(Math.random() * 101) + 19;
@@ -8,7 +7,12 @@ $(document).ready(function () {
   var win = 0;
   var lost = 0;
   var counter = 0;
-  var images = ["crystals.png", "diamond.png", "superthumb.png", "pendants.jpg"]
+  var images = [
+    "crystals.png",
+    "diamond.png",
+    "superthumb.png",
+    "pendants.jpg"
+  ];
   for (var i = 0; i < images.length; i++) {
     var randomValue = Math.floor(Math.random() * 11) + 1;
     console.log("initial set up random = " + randomValue);
@@ -21,24 +25,18 @@ $(document).ready(function () {
     imageCrystal.attr("id", i).attr("value", randomValue);
 
     imageCrystal.val(randomValue);
-    //imageCrystal.attr("data-value", randomValue);
-
-    //imageCrystal.html(randomValue);
-
     $("#crystal").append(imageCrystal);
     console.log(imageCrystal);
   }
 
-  $(document).on("click", ".crystal-image", function (event) {
-    var crystalValue = event.target.value
-    console.log("crystalValue = " + crystalValue)
-    //crystalValue = parseInt(crystalValue);
+  $(document).on("click", ".crystal-image", function(event) {
+    var crystalValue = event.target.value;
+    console.log("crystalValue = " + crystalValue);
 
-    counter += parseInt(crystalValue)
+    counter += parseInt(crystalValue);
 
     $("#score").text("score :" + counter);
-    //alert("New score " + counter);
-    console.log(counter)
+    console.log(counter);
     if (counter === randomNumber) {
       win++;
       reset();
@@ -61,14 +59,7 @@ $(document).ready(function () {
     counter = 0;
     $("#win").text("wins :" + win);
     $("#loose").text("lost :" + lost);
-  
-
-
   }
   $("#win").text("wins :" + win);
   $("#loose").text("lost :" + lost);
-
-
-})
-
-
+});
